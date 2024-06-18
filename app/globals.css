@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+  
+@layer base {
+  body {
+    @apply font-primery bg-primery text-white leading-loose;
+  }
+  
+  .h1 {
+    @apply text-[40px] xl:text-[60px] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[30px] xl:text-[40px] leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-[18px] xl:text-[20px] leading-[1.1] font-semibold;
+  }
+
+  .text-outline{
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  .text-outline-hover{
+    -webkit-text-stroke: 1px #0080B7;
+  }
+}
