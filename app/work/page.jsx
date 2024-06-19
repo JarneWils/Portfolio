@@ -9,6 +9,9 @@ import Image from "next/image";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
+//components//
+import WorkSliderBtns from "@/components/WorkSliderBtns";
+
 const projects = [
     {
         num: "01",
@@ -120,18 +123,18 @@ const Work = () => {
                         spaceBetween={30}
                         slidesPerView={1}
                         onSlideChange={handleSlideChange}
-                        className="xl-h[520px] rounded-2xl">
+                        className=" rounded-xl">
                             {projects.map((project, index) => {
                                 return (
                                     <SwiperSlide key={index} className="w-full">
-                                    <div className="h-[460px] relative group flex justify-center items-center">
+                                    <div className="h-[410px] relative group flex justify-center items-center">
 
                                         {/*overlay*/}
                                         <div>
                                         </div>
 
                                         {/*Foto*/}
-                                        <div className="relative w-full h-full ">
+                                        <div className="relative w-full h-full">
                                             <Image
                                             src={project.image}
                                             fill
@@ -144,6 +147,9 @@ const Work = () => {
                                     </SwiperSlide>
                                 );
                             })}
+                            <WorkSliderBtns 
+                            containerStyles="text-xl"
+                            btnStyles="mr-4 mt-4 px-2 py-2 bg-white/10 hover:bg-accent rounded-xl"/>
                         </Swiper>
                     </div>
                 </div>
