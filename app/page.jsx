@@ -26,7 +26,7 @@ const Home = () => {
               {/*socials*/}
               <div className="flex flex-col xl:flex-row items-center gap-8">
                 <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
-                  <span>Donload CV</span>
+                  <span>Download CV</span>
                   <FiDownload className="text-xl" />
                 </Button>
                 <div className="mb-6 xl:mb-0">
