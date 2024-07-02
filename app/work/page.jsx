@@ -147,7 +147,7 @@ const Work = () => {
                             {projects.map((project, index) => {
                                 return (
                                     <SwiperSlide key={index} className="w-full">
-                                    <div className="h-[410px] relative group flex justify-center items-center">
+                                    <div className="h-[230px] xl:h-[410px] relative group flex justify-center items-center">
 
                                         {/*overlay*/}
                                         <div>
