@@ -8,6 +8,7 @@ Programmas:
 Ux/Ui:
 - fuck off
 - wizzle woodz
+- Forward
 - Kurious Expert Review
 
 Web/App Development:
