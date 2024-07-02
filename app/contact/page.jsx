@@ -45,7 +45,7 @@ const Contact = () => {
                     {/*form*/}
                     <div className="xl:w-[64%] order-2 xl:order-none">
                         <form className="flex flex-col gap-2 p-10 bg-[#27272e] rounded-xl">
-                            <h3 className="text-3xl text-accent font-semibold">Let's work togehter!</h3>
+                            <h3 className="text-3xl text-accent font-semibold">Let's work together!</h3>
                             <p className="text-white/60 text-base pt-2 pb-2">If you are interested in working with me, please select a service and feel free to contact me!</p>
                             {/*input*/}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -80,6 +80,8 @@ const Contact = () => {
                             </Button>
                         </form>
                     </div>
+
+                    
 
                     {/*info*/}
                     <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
