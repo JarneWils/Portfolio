@@ -1,3 +1,5 @@
+"use client"; 
+
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 import { motion } from "framer-motion";
@@ -8,6 +10,16 @@ import Foto from "@/components/Foto";
 import Stats from "@/components/Stats";
 
 const Home = () => {
+  const handleDownload = () => {
+    // Zet hier het pad naar je CV-bestand
+    const link = document.createElement('a');
+    link.href = '/assets/CV.pdf'; // Vervang met de werkelijke pad of URL naar je PDF-bestand
+    link.download = 'Jarne-Wils-CV.pdf'; // Optioneel: stel de naam van het bestand in
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
       <section className="h-full">
         <div className="container mx-auto h-full">
@@ -25,7 +37,7 @@ const Home = () => {
 
               {/*socials*/}
               <div className="flex flex-col xl:flex-row items-center gap-8">
-                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2" onClick={handleDownload}>
                   <span>Download CV</span>
                   <FiDownload className="text-xl" />
                 </Button>
