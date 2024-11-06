@@ -23,7 +23,7 @@ const about = {
         },
         {
             fieldname: "Experience",
-            fieldValue:"3 years",
+            fieldValue:"(No work experience yet)",
         },
         {
             fieldname: "Nationality",

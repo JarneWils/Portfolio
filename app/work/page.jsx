@@ -25,6 +25,17 @@ const projects = [
     },
     {
         num: "02",
+        category: "Spotify Redesign",
+        title: "Ux/Ui Design",
+        discription: "This is a redesign of Spotify. After doing research there are a lot of things that could be better.",
+        stack: [{ name: "Ux/Ui"}, { name: "Figma"}, { name: "Illustrator"}, { name: "Photoshop"}],
+        image: '/assets/Spotify.png',
+        live: "",
+        github: "https://www.figma.com/design/PnbR47QHwpx4m4pktjZz4W/Ux%2FUi-Expert-Presentation?node-id=0-1&t=6PiyIrXv3mkzfLKm-1",
+    },
+
+    {
+        num: "03",
         category: "Forward Redesign",
         title: "Ux/Ui Design",
         discription: "This is a redesign of the website for FORWARD, a sports coaching company. They wanted the site to exude power and a winning spirit.",
@@ -34,7 +45,7 @@ const projects = [
         github: "https://www.figma.com/design/vf1SuEqY2NvyQFhO7hyrvr/FORWARD?node-id=1-798&t=iIyCzzBXQ03KrZoi-1",
     },
     {
-        num: "03",
+        num: "04",
         category: "F*CK OFF app",
         title: "Ux/Ui Design",
         discription: "This is a creative app with a main feature to help you avoid encountering people you dislike in real life. The app provides the best routes to escape.",
@@ -44,7 +55,7 @@ const projects = [
         github: "https://www.figma.com/design/uuVemaPXZaBFVjbMRA1tvh/F*CK-OFF?node-id=1-1466&t=Hkc2dgAYZh3yYvR1-1",
     },
     {
-        num: "04",
+        num: "05",
         category: "Wizzle Woodz website",
         title: "Front-end",
         discription: "This is the website for my UX/UI project. Here, you can find everything about the app, including my entire design process.",
@@ -54,7 +65,7 @@ const projects = [
         github: "https://wizzlewoodz.netlify.app",
     },
     {
-        num: "05",
+        num: "06",
         category: "Cursed Pack website",
         title: "Front-end",
         discription: "I created a sample pack for other producers. To sell it, I built this website to make it easy for people to buy.",
@@ -62,6 +73,16 @@ const projects = [
         image: '/assets/Cursed.png',
         live: "",
         github: "https://cursed-samplepack.netlify.app/",
+    },
+    {
+        num: "07",
+        category: "Linktree",
+        title: "Front-end",
+        discription: "I created my own Linktree, so paying for an account is no longer necessary.",
+        stack: [{ name: "Front-end"}, { name: "next.js"}, { name: "tailwind css"}, { name: "javascript"}],
+        image: '/assets/Linktree.png',
+        live: "",
+        github: "https://link-tree-damp.vercel.app/",
     },
 ];
 
@@ -122,7 +143,7 @@ const Work = () => {
 
                         {/*buttons*/}
                         <div>
-                            <Link href={project.github} className="text-white/60">
+                            <Link href={project.github} className="text-white/60" target="_blank">
                               <TooltipProvider>
                                  <Tooltip>
                                     <TooltipTrigger className="ml-6 mt-2 xl:mt-0 xl:mb-2 text-white hover:text-primery w-[50px] h-[50px] rounded-full bg-white/15 hover:bg-accent rotate-0 hover:rotate-45 transition-all duration-200 flex justify-center items-center ">

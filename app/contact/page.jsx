@@ -66,6 +66,7 @@ const Contact = () => {
                                         <SelectItem value="frontend">Front-end Development</SelectItem>
                                         <SelectItem value="motiondesign">Motion Design</SelectItem>
                                         <SelectItem value="musicproduction">Music Production</SelectItem>
+                                        <SelectItem value="musicproduction">Others</SelectItem>
                                     </SelectGroup>
                                 </SelectContent>
                             </Select>
@@ -76,7 +77,7 @@ const Contact = () => {
                             />
                             {/*button*/}
                             <Button size="md" className="max-w-40 mt-5">
-                                Send message
+                                (not working yet)
                             </Button>
                         </form>
                     </div>
