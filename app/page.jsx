@@ -13,7 +13,7 @@ const Home = () => {
   const handleDownload = () => {
     // Zet hier het pad naar je CV-bestand
     const link = document.createElement('a');
-    link.href = '/assets/CV.pdf'; // Vervang met de werkelijke pad of URL naar je PDF-bestand
+    link.href = '/assets/CV-JarneWils.pdf'; // Vervang met de werkelijke pad of URL naar je PDF-bestand
     link.download = 'Jarne-Wils-CV.pdf'; // Optioneel: stel de naam van het bestand in
     document.body.appendChild(link);
     link.click();

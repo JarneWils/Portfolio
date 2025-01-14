@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaInstagram, FaSoundcloud } from "react-icons/fa"
 
 const socials = [
     { icon: <FaGithub />, path: 'https://github.com/JarneWils/Portfolio' },
-    { icon: <FaLinkedin />, path: 'https://www.linkedin.com' },
+    { icon: <FaLinkedin />, path: 'https://www.linkedin.com/in/jarne-wils-a4b220224/' },
     { icon: <FaInstagram />, path: 'https://www.instagram.com/_jarne_wils_/' },
     { icon: <FaSoundcloud />, path: 'https://soundcloud.com/damp-3670'},
 ];
