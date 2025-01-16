@@ -84,6 +84,16 @@ const projects = [
         live: "",
         github: "https://link-tree-damp.vercel.app/",
     },
+    {
+        num: "08",
+        category: "Minigame",
+        title: "Front-end",
+        discription: "I created a little minigame to test my skills in javascript and learn new things",
+        stack: [{ name: "Front-end"}, { name: "html"}, { name: "css"}, { name: "javascript"}],
+        image: '/assets/Shooter.png',
+        live: "",
+        github: "https://shotu.vercel.app/",
+    },
 ];
 
 const Work = () => {
