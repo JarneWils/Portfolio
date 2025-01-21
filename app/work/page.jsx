@@ -102,7 +102,7 @@ const projects = [
         stack: [{ name: "Front-end"}, { name: "Front-end"}, { name: "html"}, { name: "javascript"}],
         image: '/assets/multiplayergame.png',
         live: "",
-        github: "https://github.com/JarneWils/ShotUs.git",
+        github: "https://shotus.onrender.com/",
     },
 ];
 
