@@ -98,7 +98,7 @@ const projects = [
         num: "09",
         category: "Multiplayer game",
         title: "in progress",
-        discription: "Im  working on a small minigame to learn more about multiplayer games and how to create them. It is not playable yet.",
+        discription: "Im  working on a small minigame to learn more about multiplayer games and how to create them. It is playable now but I'm not done yet ;)",
         stack: [{ name: "Front-end"}, { name: "Front-end"}, { name: "html"}, { name: "javascript"}],
         image: '/assets/multiplayergame.png',
         live: "",
