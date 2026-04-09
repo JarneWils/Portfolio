@@ -21,7 +21,7 @@ const info = [
     {
         icon: <FaMapMarkedAlt />,
         title: "Adres",
-        discription: "Lentestraat 10, 3670 Oudsbergen",
+        discription: "Belgium, 3670 Oudsbergen",
     },
 ];
 

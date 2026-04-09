@@ -23,17 +23,18 @@ const Foto = () => {
             }}
             className="w-[300px] h-[280px] xl:w-[600px] xl:h-[340px] mix-blend-lighten absolute">
                 <Image
-                src="/assets/selfie-7.jpg"
+                src="/assets/selfie-10.jpg"
                 sizes="full"
                 priority
                 quality={100}
-                fill alt=""
-                className="object-contain opacity-80 ml-2 xl:ml-0 xl:mt-0"/>
+                fill
+                alt=""
+                className="object-contain opacity-80 p-4 ml-2 mt-0 xl:ml-0 xl:mt-1"/>
             </motion.div>
         
             {/*circel*/}
             <motion.svg
-            className="w-[300px] h-[280px] xl:w-[600px] xl:h-[350px] mix-blend-lighten ml-2 xl:ml-0 mt-4 xl:mt-0"
+            className="w-[300px] h-[280px] xl:w-[600px] xl:h-[350px] mix-blend-lighten ml-2 xl:ml-0 mt-5 xl:mt-0"
             fill="transparant"
             viewBox="0 0 506 506"
             xmlns="http://www.w3.org/2000/svg"
@@ -42,11 +43,11 @@ const Foto = () => {
             cx="250"
             cy="250"
             r="250"
-            stroke="#00ADF8"
+            stroke="#00d483"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
-            initial={{strokeDasharray: "24 10 0 0"}}
+            initial={{strokeDasharray: "24 24 0 0"}}
             animate={{
                 strokeDasharray: ["15 120 25 25", "16 25 90 70", "5 160 30 10"],
                 rotate: [120, 360],

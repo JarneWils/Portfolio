@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 //About data//
 const about = {
     title: 'About me',
-    discription: "I'm 21 years old and live in Limburg. I have a strong passion for app and web development and am eager to join a company to advance my skills. In my free time, I enjoy exploring music. With a sociable nature, ambition, and creativity, I'm excited to turn my passions into a career.",
+    discription: "I'm 23 years old and live in Limburg, Belgium. I have a strong passion for app and web development and I'm always looking to improve my skills. In my free time, I like exploring new things within IT. I'm a social, ambitious and creative person, and I'm excited to turn my passion into a career.",
     info: [
         {
             fieldname: "Name",
@@ -46,34 +46,29 @@ const experience = {
     discription: "I haven't yet accumulated professional experience as a developer, but I've had the opportunity to gain other valuable insights and skills through my role as a student employee.",
     items: [
         {
-            company: "Maintenance technician",
-            position:"Center Parcs",
-            duration:"2021-present",
+            company: "Student job",
+            position:"Belcotex",
+            duration:"2025-present",
         },
         {
-            company: "Stocker",
+            company: "internship",
+            position:"FLUX (3D Config)",
+            duration:"2025",
+        },
+        {
+            company: "Student job",
+            position:"Center Parcs",
+            duration:"2021-2025",
+        },
+        {
+            company: "Student job",
             position:"Carrefour",
             duration:"2019-2021",
         },
         {
-            company: "Canvas fabricator",
+            company: "Student job",
             position:"Tenten De Boer",
             duration:"summer of 2019",
-        },
-        {
-            company: "",
-            position:"",
-            duration:"",
-        },
-        {
-            company: "",
-            position:"",
-            duration:"",
-        },
-        {
-            company: "",
-            position:"",
-            duration:"",
         },
     ],
 };
@@ -86,32 +81,17 @@ const education = {
         {
             institution: "AP Hogeschool Antwerpen",
             degree:"Interface Design - GDM",
-            duration:"2021-Present",
+            duration:"2021 - 2025",
         },
         {
             institution: "Don Bosco Hechtel",
             degree:"Technische Wetenschappen",
-            duration:"2021",
+            duration:"2015-2021",
         },
         {
             institution: "Category B",
             degree:"Driver's license",
             duration:"2021",
-        },
-        {
-            institution: "",
-            degree:"",
-            duration:"",
-        },
-        {
-            institution: "",
-            degree:"",
-            duration:"",
-        },
-        {
-            institution: "",
-            degree:"",
-            duration:"",
         },
     ],
 };

@@ -32,7 +32,7 @@ const Home = () => {
               <span className="text-accent">Jarne Wils</span>
               </h1>
               <p className="max-w-[550px] mb-6 text-white/80">
-              I'm a front-end developer with a passion for creating elegant apps and websites. I love turning ideas into reality through code and intuitive design.
+              I'm a front-end developer with a passion for creating elegant apps or websites. I love turning ideas into reality through code and intuitive design.
               </p>
 
               {/*socials*/}
@@ -50,7 +50,7 @@ const Home = () => {
             </div>
 
             {/*foto*/}
-            <div className="order-1 xl:order-none mb-6 xl:mb-0">
+            <div className="order-1 xl:order-none mb-6 xl:mt-0">
               <Foto />
             </div>
 
