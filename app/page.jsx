@@ -13,8 +13,8 @@ const Home = () => {
   const handleDownload = () => {
     // Zet hier het pad naar je CV-bestand
     const link = document.createElement('a');
-    link.href = '/assets/CV-JarneWils.pdf'; // Vervang met de werkelijke pad of URL naar je PDF-bestand
-    link.download = 'Jarne-Wils-CV.pdf'; // Optioneel: stel de naam van het bestand in
+    link.href = '/assets/CV_JarneWils_Engels.pdf'; // Vervang met de werkelijke pad of URL naar je PDF-bestand
+    link.download = 'Jarne Wils CV.pdf'; // Optioneel: stel de naam van het bestand in
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -27,12 +27,12 @@ const Home = () => {
 
             {/*text*/}
             <div className="text-center xl:text-left order-2 xl:order-none">
-              <span className="text-xl h1">Web/App Developer</span>
+              <span className="text-xl h1">Web & App Developer</span>
               <h1 className="h1 mb-6 mt-2">Hello I am <br />
               <span className="text-accent">Jarne Wils</span>
               </h1>
               <p className="max-w-[550px] mb-6 text-white/80">
-              I'm a front-end developer with a passion for creating elegant apps or websites. I love turning ideas into reality through code and intuitive design.
+              I like building things that people actually enjoy using. Whether it’s designing a clean interface or bringing it to life in code, I’m always focused on making things feel simple and intuitive. I come from a crossmedia design background, where I learned to think both visually and structurally.
               </p>
 
               {/*socials*/}

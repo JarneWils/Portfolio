@@ -1,7 +1,7 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs } from "react-icons/fa";
-import { SeTailwindcss, SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaGithub } from "react-icons/fa";
+import { SiThreedotjs, SiTailwindcss, } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 //About data//
 const about = {
     title: 'About me',
-    discription: "I'm 23 years old and live in Limburg, Belgium. I have a strong passion for app and web development and I'm always looking to improve my skills. In my free time, I like exploring new things within IT. I'm a social, ambitious and creative person, and I'm excited to turn my passion into a career.",
+    discription: "I’m 23 years old and based in Limburg, Belgium. I’m passionate about designing and building digital experiences, with a strong interest in UX/UI and front-end development. I’m always looking to improve my skills and explore new tools within IT. I’m a social, ambitious, and creative person who enjoys learning, collaborating, and growing towards a career in digital product design.",
     info: [
         {
             fieldname: "Name",
@@ -23,7 +23,7 @@ const about = {
         },
         {
             fieldname: "Experience",
-            fieldValue:"(No work experience yet)",
+            fieldValue:"Internship at FLUX – 3D Config",
         },
         {
             fieldname: "Nationality",
@@ -42,8 +42,8 @@ const about = {
 
 //Ervaring data//
 const experience = {
-    title: 'My experience',
-    discription: "I haven't yet accumulated professional experience as a developer, but I've had the opportunity to gain other valuable insights and skills through my role as a student employee.",
+    title: 'Work experience',
+    discription: "My first experience as a digital designer and developer was during my internship at 3D Config, where I worked on creating 3D configurators using Three.js and React Three Fiber. This experience really sparked my passion for building digital products and pushed me to keep improving my skills and exploring new technologies.",
     items: [
         {
             company: "Student job",
@@ -76,16 +76,21 @@ const experience = {
 //Opleiding data//
 const education = {
     title: 'My degrees',
-    discription: "I'm currently a student at AP Hogeschool in Antwerp, graduating in 2025 as an interface designer in the GDM program, eager to kickstart my frontend developer career.",
+    discription: "I recently graduated with a degree in Crossmedia Design and a teaching qualification. I am currently looking for a position as a UX/UI Designer or Web and App Developer where I can further develop my skills and gain more professional experience.",
     items: [
         {
+            institution: "UCLL",
+            degree:"Teacher Degree",
+            duration:"2025-2026",
+        },
+        {
             institution: "AP Hogeschool Antwerpen",
-            degree:"Interface Design - GDM",
+            degree:"Crossmedia Design - GDM",
             duration:"2021 - 2025",
         },
         {
             institution: "Don Bosco Hechtel",
-            degree:"Technische Wetenschappen",
+            degree:"Technical Sciences",
             duration:"2015-2021",
         },
         {
@@ -101,6 +106,10 @@ const skills = {
     title: 'My skills',
     discription: "Thanks to these technologies, I've been able to successfully complete several projects. While I have some familiarity with them, I'm still eager to improve my skills.",
     skillList: [
+        {
+            icon: <FaFigma />,
+            name:"figma",
+        },
         {
             icon: <FaHtml5 />,
             name:"html",
@@ -118,20 +127,16 @@ const skills = {
             name:"javascript",
         },
         {
+            icon: <SiThreedotjs />,
+            name:"Three.js",
+        },
+        {
             icon: <FaReact />,
-            name:"react(native).js",
+            name:"React(native).js",
         },
         {
-            icon: <SiNextdotjs />,
-            name:"next.js",
-        },
-        {
-            icon: <FaNodeJs />,
-            name:"NodeJs",
-        },
-        {
-            icon: <FaFigma />,
-            name:"figma",
+            icon: <FaGithub />,
+            name:"Github",
         },
     ],
 };
