@@ -41,8 +41,8 @@ const Contact = () => {
         >
             <div className="container mx-auto">
                 <div className="flex flex-col xl:flex-row gap-[30px]">
-
-                    {/*form*/}
+ 
+                  {/*form*/}
                     <div className="xl:w-[64%] order-2 xl:order-none">
                         <form className="flex flex-col gap-2 p-10 bg-[#27272e] rounded-xl">
                             <h3 className="text-3xl text-accent font-semibold">Let's work together!</h3>

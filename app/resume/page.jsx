@@ -1,6 +1,6 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaGithub } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaWordpress } from "react-icons/fa";
 import { SiThreedotjs, SiTailwindcss, } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -103,12 +103,16 @@ const education = {
 
 //skill data//
 const skills = {
-    title: 'My skills',
+    title: 'Tools',
     discription: "Thanks to these technologies, I've been able to successfully complete several projects. While I have some familiarity with them, I'm still eager to improve my skills.",
     skillList: [
         {
             icon: <FaFigma />,
             name:"figma",
+        },
+        {
+            icon: <FaWordpress />,
+            name:"Wordpress",
         },
         {
             icon: <FaHtml5 />,
@@ -133,10 +137,6 @@ const skills = {
         {
             icon: <FaReact />,
             name:"React(native).js",
-        },
-        {
-            icon: <FaGithub />,
-            name:"Github",
         },
     ],
 };
@@ -166,7 +166,7 @@ const Resume = () => {
                     >
                         <TabsTrigger value="experience">Experience</TabsTrigger>
                         <TabsTrigger value="education">Degrees</TabsTrigger>
-                        <TabsTrigger value="skills">Skills</TabsTrigger>
+                        <TabsTrigger value="skills">Tools</TabsTrigger>
                         <TabsTrigger value="about">About me</TabsTrigger>
                     </TabsList>
 
