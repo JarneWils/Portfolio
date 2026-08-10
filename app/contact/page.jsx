@@ -141,8 +141,7 @@ const Contact = () => {
             </h2>
 
             <p className="text-white/60 mb-8 max-w-xl">
-              Heb je een vraag, project of idee? Stuur me gerust een bericht.
-              Ik neem zo snel mogelijk contact met je op.
+              Interested in working together or have any questions? Feel free to get in touch!
             </p>
 
             <form
