@@ -32,7 +32,7 @@ const Home = () => {
               <span className="text-accent">Jarne Wils</span>
               </h1>
               <p className="max-w-[550px] mb-6 text-white/80">
-              I’m 23-year-old and live in Limburg (Belgium). I have a passion for UX/UI design and front-end development. In my free time, I’m always exploring new technologies within the IT field to expand my knowledge. I’m currently looking for my first professional opportunity where I can continue to grow within the industry.
+              I’m 23 years old and live in Limburg (Belgium). I have a passion for UX/UI design and front-end development. In my free time, I like exploring new technologies within the IT field to expand my knowledge. I’m currently looking for my first professional opportunity where I can continue to grow within the industry.
               </p>
 
               {/*socials*/}

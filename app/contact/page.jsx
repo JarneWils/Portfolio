@@ -1,112 +1,265 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select,  SelectContent, SelectGroup, SelectLabel, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkedAlt,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const info = [
-    {
-        icon: <FaPhoneAlt />,
-        title: "Phone",
-        discription: "(+32)479489323",
-    },
-    {
-        icon: <FaEnvelope />,
-        title: "Email",
-        discription: "jarnewils.werk@gmail.com",
-    },
-    {
-        icon: <FaMapMarkedAlt />,
-        title: "Adres",
-        discription: "Belgium, 3670 Oudsbergen",
-    },
+  {
+    icon: <FaPhoneAlt />,
+    title: "Phone",
+    description: "(+32) 479 48 93 23",
+  },
+  {
+    icon: <FaEnvelope />,
+    title: "Email",
+    description: "jarnewils.werk@gmail.com",
+  },
+  {
+    icon: <FaMapMarkedAlt />,
+    title: "Adres",
+    description: "Belgium, 3670 Oudsbergen",
+  },
 ];
 
 const Contact = () => {
-    return (
-        <motion.section
-        initial={{opacity: 0}}
-        animate={{
-            opacity: 1,
-            transition: {
-                delay: 0.4,
-                duration: 1,
-                ease: "easeIn",
-            }
-        }}
-        className="py-6"
-        >
-            <div className="container mx-auto">
-                <div className="flex flex-col xl:flex-row gap-[30px]">
- 
-                  {/*form*/}
-                    <div className="xl:w-[64%] order-2 xl:order-none">
-                        <form className="flex flex-col gap-2 p-10 bg-[#27272e] rounded-xl">
-                            <h3 className="text-3xl text-accent font-semibold">Let's work together!</h3>
-                            <p className="text-white/60 text-base pt-2 pb-2">If you are interested in working with me, please select a service and feel free to contact me!</p>
-                            {/*input*/}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <Input type="firstname" placeholder="First name"/>
-                                <Input type="lastname" placeholder="Last name"/>
-                                <Input type="email" placeholder="Email"/>
-                                <Input type="phone" placeholder="Phone number"/>
-                            </div>
-                            {/*select*/}
-                            <Select>
-                                <SelectTrigger className="w-full">
-                                    <SelectValue placeholder="Select a service" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectGroup>
-                                        <SelectLabel className="text-accent font-bold">Select a service</SelectLabel>
-                                        <SelectItem value="uxui">UX/UI Design</SelectItem>
-                                        <SelectItem value="frontend">Front-end Development</SelectItem>
-                                        <SelectItem value="motiondesign">Motion Design</SelectItem>
-                                        <SelectItem value="musicproduction">Music Production</SelectItem>
-                                        <SelectItem value="musicproduction">Others</SelectItem>
-                                    </SelectGroup>
-                                </SelectContent>
-                            </Select>
-                            {/*select*/}
-                            <Textarea
-                            className="h-200px"
-                            placeholder="Type your message."
-                            />
-                            {/*button*/}
-                            <Button size="md" className="max-w-40 mt-5">
-                                (not working yet)
-                            </Button>
-                        </form>
-                    </div>
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-                    
+  const [status, setStatus] = useState({
+    type: "",
+    message: "",
+  });
 
-                    {/*info*/}
-                    <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-                        <ul className="flex flex-col gap-10">
-                            {info.map((item, index) => {
-                                return (
-                                    <li key={index} className="flex items-center gap-4">
-                                        <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272e] text-accent rounded-md flex items-center justify-center">
-                                            <div className="text-20px">{item.icon}</div>
-                                        </div>
-                                        <div>
-                                            <p className="text-xl font-bold">{item.title}</p>
-                                            <h3 className="text-white/60 text-base">{item.discription}</h3>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
+  const [isLoading, setIsLoading] = useState(false);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setStatus({
+      type: "",
+      message: "",
+    });
+
+    if (
+      !formData.firstname ||
+      !formData.lastname ||
+      !formData.email ||
+      !formData.message
+    ) {
+      setStatus({
+        type: "error",
+        message: "Vul alle verplichte velden in.",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus({
+          type: "success",
+          message: "Bericht succesvol verzonden!",
+        });
+
+        setFormData({
+          firstname: "",
+          lastname: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        setStatus({
+          type: "error",
+          message: data.message || "Er ging iets mis.",
+        });
+      }
+    } catch (error) {
+      console.error("Contact form error:", error);
+
+      setStatus({
+        type: "error",
+        message: "Er is een serverfout opgetreden.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          delay: 0.4,
+          duration: 1,
+          ease: "easeIn",
+        },
+      }}
+      className="py-6"
+    >
+      <div className="container mx-auto">
+        <div className="flex flex-col xl:flex-row gap-10 xl:gap-20">
+          {/* FORM */}
+          <div className="flex-1">
+            <h2 className="text-4xl font-bold mb-4">
+              Let's work together!
+            </h2>
+
+            <p className="text-white/60 mb-8 max-w-xl">
+              Heb je een vraag, project of idee? Stuur me gerust een bericht.
+              Ik neem zo snel mogelijk contact met je op.
+            </p>
+
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Input
+                  name="firstname"
+                  placeholder="firstname"
+                  value={formData.firstname}
+                  onChange={handleChange}
+                  required
+                />
+
+                <Input
+                  name="lastname"
+                  placeholder="lastname"
+                  value={formData.lastname}
+                  onChange={handleChange}
+                  required
+                />
+
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+
+                <Input
+                  name="phone"
+                  type="tel"
+                  placeholder="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <Textarea
+                name="message"
+                placeholder="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="min-h-[180px]"
+              />
+
+              {status.message && (
+                <div
+                  className={`rounded-md px-4 py-3 text-sm ${
+                    status.type === "success"
+                      ? "bg-green-500/10 text-green-400"
+                      : "bg-red-500/10 text-red-400"
+                  }`}
+                >
+                  {status.message}
                 </div>
-            </div>
-        </motion.section>
-    )
+              )}
+
+              <Button
+                type="submit"
+                disabled={isLoading}
+                className="max-w-40 mt-2"
+              >
+                {isLoading ? "Verzenden..." : "Send"}
+              </Button>
+            </form>
+          </div>
+
+          {/* INFO */}
+          <div className="flex-1 flex items-center xl:justify-end">
+            <ul className="flex flex-col gap-10">
+              {info.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex items-center gap-4"
+                >
+                  <div className="w-[52px] h-[52px] bg-[#27272e] text-accent rounded-md flex items-center justify-center text-xl">
+                    {item.icon}
+                  </div>
+
+                  <div>
+                    <p className="text-xl font-bold">
+                      {item.title}
+                    </p>
+
+                    {item.title === "Email" ? (
+                      <a
+                        href="mailto:jarnewils.werk@gmail.com"
+                        className="text-white/60 hover:text-accent transition-colors"
+                      >
+                        {item.description}
+                      </a>
+                    ) : item.title === "Phone" ? (
+                      <a
+                        href="tel:+32479489323"
+                        className="text-white/60 hover:text-accent transition-colors"
+                      >
+                        {item.description}
+                      </a>
+                    ) : (
+                      <p className="text-white/60">
+                        {item.description}
+                      </p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  );
 };
 
 export default Contact;
