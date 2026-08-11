@@ -3,14 +3,14 @@ import { NextResponse } from "next/server";
 
 export async function POST(request) {
   try {
-    // Controleer eerst of de API key bestaat
+    // Check if the API key exists
     if (!process.env.RESEND_API_KEY) {
-      console.error("RESEND_API_KEY ontbreekt in .env.local");
+      console.error("RESEND_API_KEY is missing in .env.local");
 
       return NextResponse.json(
         {
           success: false,
-          message: "RESEND_API_KEY ontbreekt.",
+          message: "RESEND_API_KEY is missing.",
         },
         { status: 500 }
       );
@@ -26,26 +26,26 @@ export async function POST(request) {
       message,
     } = body;
 
-    // Validatie
+    // Validation
     if (!firstname || !lastname || !email || !message) {
       return NextResponse.json(
         {
           success: false,
-          message: "Vul alle verplichte velden in.",
+          message: "Please fill in all required fields.",
         },
         { status: 400 }
       );
     }
 
-    // Maak Resend pas hier aan
+    // Initialize Resend
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // E-mail versturen
+    // Send email
     const { data, error } = await resend.emails.send({
-      from: "Contactformulier <onboarding@resend.dev>",
+      from: "Contact Form <onboarding@resend.dev>",
       to: ["wilske.jarne@gmail.com"],
       replyTo: email,
-      subject: `Nieuw bericht van ${firstname} ${lastname}`,
+      subject: `New message from ${firstname} ${lastname}`,
 
       html: `
         <div
@@ -55,51 +55,50 @@ export async function POST(request) {
             color: #222;
           "
         >
-          <h2>Nieuw bericht via je portfolio</h2>
+          <h2>New message via your portfolio</h2>
 
           <p>
-            <strong>Naam:</strong><br />
+            <strong>Name:</strong><br />
             ${escapeHtml(firstname)} ${escapeHtml(lastname)}
           </p>
 
           <p>
-            <strong>E-mail:</strong><br />
+            <strong>Email:</strong><br />
             ${escapeHtml(email)}
           </p>
 
           <p>
-            <strong>Telefoon:</strong><br />
-            ${escapeHtml(phone || "Niet opgegeven")}
+            <strong>Phone:</strong><br />
+            ${escapeHtml(phone || "Not provided")}
           </p>
 
           <p>
-            <strong>Bericht:</strong><br />
+            <strong>Message:</strong><br />
             ${escapeHtml(message).replace(/\n/g, "<br />")}
           </p>
         </div>
       `,
     });
 
-    // Resend heeft een fout teruggegeven
+    // Resend returned an error
     if (error) {
       console.error("RESEND ERROR:", error);
 
       return NextResponse.json(
         {
           success: false,
-          message:
-            error.message || "E-mail kon niet worden verzonden.",
+          message: error.message || "The email could not be sent.",
         },
         { status: 500 }
       );
     }
 
-    console.log("E-mail succesvol verzonden:", data);
+    console.log("Email sent successfully:", data);
 
     return NextResponse.json(
       {
         success: true,
-        message: "Bericht succesvol verzonden!",
+        message: "Your message has been sent successfully!",
       },
       { status: 200 }
     );
@@ -109,14 +108,14 @@ export async function POST(request) {
     return NextResponse.json(
       {
         success: false,
-        message: "Er is een serverfout opgetreden.",
+        message: "A server error occurred.",
       },
       { status: 500 }
     );
   }
 }
 
-// Beschermt de HTML-mail tegen HTML-injectie
+// Protects the HTML email against HTML injection
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, "&amp;")

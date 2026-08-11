@@ -70,7 +70,7 @@ const Contact = () => {
     ) {
       setStatus({
         type: "error",
-        message: "Vul alle verplichte velden in.",
+        message: "Please fill in all required fields.",
       });
       return;
     }
@@ -91,7 +91,7 @@ const Contact = () => {
       if (res.ok) {
         setStatus({
           type: "success",
-          message: "Bericht succesvol verzonden!",
+          message: "Your message has been sent successfully!",
         });
 
         setFormData({
@@ -104,7 +104,7 @@ const Contact = () => {
       } else {
         setStatus({
           type: "error",
-          message: data.message || "Er ging iets mis.",
+          message: data.message || "Something went wrong.",
         });
       }
     } catch (error) {
@@ -112,7 +112,7 @@ const Contact = () => {
 
       setStatus({
         type: "error",
-        message: "Er is een serverfout opgetreden.",
+        message: "A server error occurred.",
       });
     } finally {
       setIsLoading(false);
@@ -137,12 +137,10 @@ const Contact = () => {
           {/* FORM */}
           <div className="flex-1">
             <h2 className="text-4xl font-bold mb-4">
-              Let's work together!
+              Contact me!
             </h2>
 
-            <p className="text-white/60 mb-8 max-w-xl">
-              Interested in working together or have any questions? Feel free to get in touch!
-            </p>
+            <br/>
 
             <form
               onSubmit={handleSubmit}
