@@ -75,16 +75,6 @@ const projects = [
     //     github: "https://cursed-samplepack.netlify.app/",
     // },
     // {
-    //     num: "04",
-    //     category: "Linktree",
-    //     title: "Front-end",
-    //     discription: "I created my own Linktree, so paying for an account is no longer necessary.",
-    //     stack: [{ name: "next.js"}, { name: "tailwind css"}, { name: "javascript"}],
-    //     image: '/assets/Linktree.png',
-    //     live: "",
-    //     github: "https://link-tree-damp.vercel.app/",
-    // },
-    // {
     //     num: "08",
     //     category: "Minigame",
     //     title: "Front-end",
@@ -96,6 +86,16 @@ const projects = [
     // },
     {
         num: "04",
+        category: "3D Trailer Generator",
+        title: "in progress",
+        discription: "I developed a trailer generator using Three.js that allows users to configure and visualize custom trailers in real time. The tool focuses on usability and provides instant visual feedback based on user input.",
+        stack: [{ name: "html"}, { name: "css"}, { name: "three.js"}, { name: "WordPress"}],
+        image: '/assets/trailer.png',
+        live: "",
+        github: "https://aanhangwagens.vercel.app/",
+    },
+    {
+        num: "05",
         category: "2D Multiplayer game",
         title: "in progress",
         discription: "In my free time, I’m working on a small multiplayer minigame to learn more about how multiplayer systems are built. It is already playable :)",
@@ -105,7 +105,7 @@ const projects = [
         github: "https://shotus.vercel.app/",
     },
     {
-        num: "05",
+        num: "06",
         category: "3D Multiplayer game",
         title: "in progress",
         discription: "I’m also building a 3D multiplayer game based on a TV show. This project helps me learn more about Three.js and how to create 3D environments. The game is already playable.",
@@ -113,16 +113,6 @@ const projects = [
         image: '/assets/choomah-game.png',
         live: "",
         github: "https://choomah-island-1.onrender.com/?players=1&map=map2",
-    },
-    {
-        num: "06",
-        category: "3D Trailer Generator",
-        title: "in progress",
-        discription: "I developed a trailer generator using Three.js that allows users to configure and visualize custom trailers in real time. The tool focuses on usability and provides instant visual feedback based on user input.",
-        stack: [{ name: "html"}, { name: "css"}, { name: "three.js"}],
-        image: '/assets/trailer.png',
-        live: "",
-        github: "https://aanhangwagens.vercel.app/",
     },
 ];
 
